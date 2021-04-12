@@ -1,4 +1,4 @@
-# dscst
+# 🔮 dscst
 
 _An asynchronous api wrapper around [discord.style](https://www.discord.style) built with **typescript**_
 
