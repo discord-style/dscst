@@ -1,16 +1,19 @@
 import axios, { AxiosError } from 'axios';
 
 import { API_URL } from '../../config';
-import { LikePayload, Response } from '../../interfaces';
+import { CommentPayload, Response } from '../../interfaces';
 
-export async function like(
+export async function comment(
    template_id: string,
+   comment: string,
    api_key: string
-): Promise<Response<LikePayload>> {
+): Promise<Response<CommentPayload>> {
    return axios
-      .post<Response<LikePayload>>(
-         API_URL + 'template/' + template_id + '/like',
-         {},
+      .post<Response<CommentPayload>>(
+         API_URL + 'template/' + template_id + '/comments',
+         {
+            comment,
+         },
          {
             headers: {
                'x-api-key': api_key,

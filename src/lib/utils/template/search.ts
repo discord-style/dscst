@@ -1,14 +1,15 @@
 import axios, { AxiosError } from 'axios';
 
 import { API_URL } from '../../config';
-import { Response, TemplatePaginationPayload } from '../../interfaces';
+import { Response, SearchPayload } from '../../interfaces';
 
-export async function recent(
+export async function search(
+   query: string,
    page?: number
-): Promise<Response<TemplatePaginationPayload>> {
+): Promise<Response<SearchPayload>> {
    return axios
-      .get<Response<TemplatePaginationPayload>>(
-         API_URL + 'template/recent' + (page ? `?page=${page}` : '')
+      .get<Response<SearchPayload>>(
+         API_URL + 'template/search/' + query + (page ? `?page=${page}` : '')
       )
       .then((res) => res.data)
       .catch((err: AxiosError) => ({
