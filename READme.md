@@ -24,6 +24,8 @@ _Use the api wrapper via separated methods_
 
 > an api key has to be passed to every auth required method
 
+> returns full api response.
+
 #### javascript
 
 ```js
@@ -58,6 +60,8 @@ _Use the api wrapper via a class_
 
 > initialize the class with your api key, select and access methods from returned util classes
 
+> returns payload rather than the entire api response, throws an error if success response is false.
+
 #### javascript
 
 ```js
@@ -76,33 +80,28 @@ import { dscst } from 'dscst';
 const discordstyle = new dscst('api_key');
 ```
 
-#### ❓ example usage (1)
+#### ❓ example usages (1)
 
 ```js
-// returns Template class with template methods
-const template = discordstyle.template('template_id');
+// fetches template data and returns Template class with template methods
+const template = await discordstyle.template('template_id');
 
-// get a template
-const info = await template.get();
+// get template cached data from class
+const cachedInfo = template.get(true);
 
-console.log(info); // template response
+// get fresh payload from api
+const freshInfo = await template.get();
 
 // like a template
 const liked = await template.like();
-
-console.log(liked); // liked template response
 ```
 
-#### ❓ example usage (2)
+#### ❓ example usages (2)
 
 ```js
-// get a template
-const info = await discordstyle.template('template_id').get();
-
-console.log(info); // template response
+// get template payload
+const template = await discordstyle.template('template_id').get();
 
 // like a template
 const liked = await discordstyle.template('template_id').like();
-
-console.log(liked); // liked template response
 ```
