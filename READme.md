@@ -40,10 +40,14 @@ import * as dscst from 'dscst';
 
 ```js
 // non-auth
-const template = await dscst.template.get('template_id');
+const info = await dscst.template.get('template_id');
+
+console.log(info); // template response
 
 // auth
 const liked = await dscst.template.like('template_id', 'api_key');
+
+console.log(liked); // liked template response
 ```
 
 <hr>
@@ -72,15 +76,33 @@ import { dscst } from 'dscst';
 const discordstyle = new dscst('api_key');
 ```
 
-#### ❓ example usage
+#### ❓ example usage (1)
 
 ```js
-// returns Template class
-const template = await discordstyle.template('template_id');
+// returns Template class with template methods
+const template = discordstyle.template('template_id');
 
-// returned template
-console.log(template);
+// get a template
+const info = await template.get();
 
-// access delete method on returned template
-await template.delete();
+console.log(info); // template response
+
+// like a template
+const liked = await template.like();
+
+console.log(liked); // liked template response
+```
+
+#### ❓ example usage (2)
+
+```js
+// get a template
+const info = await discordstyle.template('template_id').get();
+
+console.log(info); // template response
+
+// like a template
+const liked = await discordstyle.template('template_id').like();
+
+console.log(liked); // liked template response
 ```
