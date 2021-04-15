@@ -20,11 +20,11 @@ yarn add dscst
 
 ### 🗃 Utility based wrapper
 
-_Use the api wrapper via separated methods_
+_Use the api wrapper via separated methods._
 
 > an api key has to be passed to every auth required method
 
-> returns full api response.
+> returns full api response from request.
 
 #### javascript
 
@@ -56,11 +56,13 @@ console.log(liked); // liked template response
 
 ### 🌴 Class based wrapper
 
-_Use the api wrapper via a class_
+_Use the api wrapper, nicely._
+
+**will soon contain cachable data from either in memory or redis client.**
 
 > initialize the class with your api key, select and access methods from returned util classes
 
-> returns payload rather than the entire api response, throws an error if success response is false.
+> returns payload rather than the entire api response, rejects with api error message if success is false.
 
 #### javascript
 
