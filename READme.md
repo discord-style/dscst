@@ -2,6 +2,8 @@
 
 _An asynchronous api wrapper around [discord.style](https://www.discord.style) built with **typescript**_
 
+_typescript recommended, too lazy for documentation rn_
+
 ## Installation
 
 **npm**
@@ -18,7 +20,7 @@ yarn add dscst
 
 ## Usage
 
-### 🗃 Utility based wrapper
+### 🤹‍♂️ Utility based wrapper
 
 _Use the api wrapper via separated methods._
 
@@ -26,16 +28,16 @@ _Use the api wrapper via separated methods._
 
 > returns full api response from request.
 
-#### javascript
-
-```js
-const dscst = require('dscst');
-```
-
 #### typescript
 
 ```ts
 import * as dscst from 'dscst';
+```
+
+#### javascript
+
+```js
+const dscst = require('dscst');
 ```
 
 #### ❓ example usage
@@ -64,29 +66,29 @@ _Use the api wrapper, nicely._
 
 > returns payload rather than the entire api response, rejects with api error message if success is false.
 
-#### javascript
-
-```js
-const { dscst } = require('dscst');
-```
-
 #### typescript
 
 ```ts
-import { dscst } from 'dscst';
+import { discordstyle } from 'dscst';
+```
+
+#### javascript
+
+```js
+const { discordstyle } = require('dscst');
 ```
 
 #### 🔨 initialize class
 
 ```js
-const discordstyle = new dscst('api_key');
+const dscst = new discordstyle('api_key');
 ```
 
 #### ❓ example usages (1)
 
 ```js
 // fetches template data and returns Template class with template methods
-const template = await discordstyle.template('template_id');
+const template = await dscst.template('template_id');
 
 // get template cached data from class
 const cachedInfo = template.get(true);
@@ -102,8 +104,8 @@ const liked = await template.like();
 
 ```js
 // get template payload
-const template = await discordstyle.template('template_id').get();
+const template = await dscst.template('template_id').get();
 
 // like a template
-const liked = await discordstyle.template('template_id').like();
+const liked = await dscst.template('template_id').like();
 ```

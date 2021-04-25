@@ -1,3 +1,5 @@
 src
 .env
 .gitignore
+package-lock.json
+tsconfig.json

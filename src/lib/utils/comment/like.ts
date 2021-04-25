@@ -1,15 +1,15 @@
 import axios, { AxiosError } from 'axios';
-
 import { API_URL } from '../../config';
-import { TemplateLikePayload, Response } from '../../interfaces';
+import { Response, CommentLikePayload } from '../../interfaces';
 
 export async function like(
    template_id: string,
+   comment_id: string,
    api_key: string
-): Promise<Response<TemplateLikePayload>> {
+): Promise<Response<CommentLikePayload>> {
    return axios
-      .post<Response<TemplateLikePayload>>(
-         API_URL + 'template/' + template_id + '/like',
+      .post<Response<CommentLikePayload>>(
+         API_URL + 'template/' + template_id + '/' + comment_id + '/like',
          {},
          {
             headers: {

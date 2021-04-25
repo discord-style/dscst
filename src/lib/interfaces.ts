@@ -54,8 +54,8 @@ export interface Comment {
    comment: string;
    comment_by: {
       user_id: string;
-      username: string;
-      avatar: string;
+      username?: string;
+      avatar?: string;
    };
    likes: Like[];
    created_at: Date;
@@ -105,9 +105,14 @@ export interface TemplatePayload extends Template {
    channels: Channel[];
 }
 
-export interface LikePayload {
+export interface TemplateLikePayload {
    liked: boolean;
    template: Template;
+}
+
+export interface CommentLikePayload {
+   liked: boolean;
+   comment: Comment;
 }
 
 export interface SearchPayload {
@@ -119,4 +124,8 @@ export interface SearchPayload {
 export interface TemplatePaginationPayload {
    isEnd: boolean;
    templates: Template[];
+}
+
+export interface dscstMainCache {
+   recent: TemplatePaginationPayload;
 }
