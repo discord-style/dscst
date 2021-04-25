@@ -45,5 +45,5 @@
    "dependencies": {
       "axios": "^0.21.1"
    },
-   "repository": "https://github.com/ilegally/dscst"
+   "repository": "https://github.com/discord-style/dscst"
 }
