@@ -20,6 +20,16 @@ yarn add dscst
 
 ## Usage
 
+### 🔑 get an api key
+
+> this is a temporary way of generating an api key, will be easier via frontend soon.
+
+**`POST`** `https://api.discord.style/apikey` **with cookie header**
+
+_an api key will be returned in the payload json response._
+
+<hr>
+
 ### 🤹‍♂️ Utility based wrapper
 
 _Use the api wrapper via separated methods._
